@@ -75,7 +75,15 @@ function IronManComponent() {
   return <h1>{hero} is here! 🦾</h1>;
 }
 ```
+---
+## ❓ Why Didn't We Use Functional Components Before?  
 
+Earlier, functional components **could not handle state**. Since state management was only possible inside class components using `this.state`, developers had to rely on **class components** to build dynamic UIs.  
+
+However, after **React introduced Hooks** (like `useState()` in React 16.8), managing state became possible inside functional components too. This made functional components **more efficient, readable, and preferred** in modern React development.
+
+
+---
 
 ## 🎯 Class vs Functional – The Key Differences  
 
