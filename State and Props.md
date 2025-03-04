@@ -76,3 +76,53 @@ export default App;
 - Use **Props** when passing data from one component to another.
 
 ---
+
+## 🔄 Props are **Immutable**
+Props are a way to pass information between the components. But what if we want to modify them rather than passing them as is...
+
+Imagine you have two components, In one you are taking the input from user and storing it in a variable or constant, then you are passing it to another component.
+
+In another component you can copy the props into another variable or constant and then you can modify it but modifying props directly doesn't work, So this is how **Immutability** works
+
+### 📜 Example of Props Immutabilty:
+```jsx
+import React from 'react';
+
+function App() {
+const Parent = () => {
+        const num=10;
+        return <Child  n={num}/>
+    }
+    const Child = (props) => {
+        {props.n}=12;  // Props can'be changed directly as they are immutable
+        return <p>{props.n}</p>;
+    }
+    return(
+        <Parent />
+    )
+}
+export default App;
+```
+OUTPUT :- Error 
+
+### 📜 Example of How can we modify Props according to our need:
+```jsx
+import React from 'react';
+
+function App() {
+const Parent = () => {
+        const num=10;
+        return <Child  n={num}/>
+    }
+    const Child = (props) => {
+        var res=props.n;
+        res=20;
+        return <p>{res}</p>;
+    }
+    return(
+        <Parent />
+    )
+}
+export default App;
+```
+OUTPUT :- 20
